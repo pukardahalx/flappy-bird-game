@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #87CEEB 0%, #98D8E8 100%);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+
+canvas {
+    border: 3px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    cursor: pointer;
+    background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 85%, #90EE90 85%, #90EE90 100%);
+    transition: transform 0.1s ease;
+}
+
+canvas:hover, canvas:active {
+    transform: scale(1.02);
+}
+
+#score {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+    z-index: 10;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.05); }
+}
+
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    background: rgba(0,0,0,0.85);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    display: none;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+#gameOver h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    color: #FFD700;
+}
+
+#gameOver p {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+#restartBtn {
+    background: linear-gradient(45deg, #FF6B6B, #FFD93D);
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255,107,107,0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#restartBtn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(255,107,107,0.6);
+}
+
+#restartBtn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+@media (max-width: 500px) {
+    canvas { width: 95vw; height: 60vh; max-width: 400px; max-height: 600px; }
+    #score { font-size: 28px; top: 20px; }
+    #gameOver { font-size: 24px; padding: 25px; }
+    #gameOver h2 { font-size: 32px; }
+    #restartBtn { padding: 12px 25px; font-size: 18px; }
+}
