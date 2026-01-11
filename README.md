@@ -13,4 +13,6 @@ Super simple Flappy Bird clone made with HTML, CSS, and JavaScript. Runs right i
 3. Open `index.html` in any browser
 4. Play!
 
+https://pukardahalx.github.io/flappy-bird-game/
+
 It's chill and easy to control—perfect for a quick break. Enjoy! 
